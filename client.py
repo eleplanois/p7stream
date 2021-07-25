@@ -5,19 +5,12 @@ import plotly.graph_objects as go
 import streamlit as st
 import matplotlib.pyplot as plt
 
-def client():
+def client(df):
     st.set_option('deprecation.showPyplotGlobalUse', False)
-
-    df = pd.read_csv('df_feats_sample.csv', index_col=0)
 
     explainer_shap = -0.5813475526725127
 
     df_feats = pd.read_csv('feats_sample_shap_values_lgb.csv', index_col=0)
-
-    df.drop(columns='TARGET', inplace=True)
-    index1500 = [i for i in range(0,1500)]
-    df.index = index1500
-
 
     response = requests.get("https://p7api.herokuapp.com/predict/")
     if response:
