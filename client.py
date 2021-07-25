@@ -10,13 +10,10 @@ def client():
 
     df = pd.read_csv('df_feats_sample.csv', index_col=0)
 
-    import pickle
-    with open('feats_sample_explainer_shap.p', 'rb') as f3:
-        explainer_shap = pickle.load(f3)
+    explainer_shap = -0.5813475526725127
 
     df_feats = pd.read_csv('feats_sample_shap_values_lgb.csv', index_col=0)
 
-    df_TARGET = df.TARGET.copy()
     df.drop(columns='TARGET', inplace=True)
     index1500 = [i for i in range(0,1500)]
     df.index = index1500
@@ -81,7 +78,7 @@ def client():
 
     def update_shap(sk_id, fig):
         ind=df[df.SK_ID_CURR==int(sk_id)].index.values[0]
-        shap_object = ShapObject(base_values = explainer_shap.expected_value[1],
+        shap_object = ShapObject(base_values = explainer_shap,
                                  values = df_feats.loc[ind].values,
                                  feature_names = df.columns,
                                  data = df.iloc[ind,:])
