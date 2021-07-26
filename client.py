@@ -16,7 +16,9 @@ def client(df, df_features):
 
     df_feats = pd.read_csv('feats_sample_shap_values_lgb.csv', index_col=0)
 
-    response = requests.get(url+"predict/")
+    url_requests = url+"predict/"
+    print(url_requests)
+    response = requests.get(url_requests)
     if response:
         list_client_id = response.json()['list_client_id']
         list_client_id = sorted(list_client_id)
