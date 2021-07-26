@@ -1,5 +1,6 @@
 import streamlit as st
 import client
+import client_dev
 import home
 import analyse_initiale
 import analyse_exploratoire
@@ -13,9 +14,11 @@ def load_data():
     df.drop(columns='TARGET', inplace=True)
     index1500 = [i for i in range(0,1500)]
     df.index = index1500
-    return df
+    df_features = pd.read_csv('features174 meanings.csv', sep=';', header=None)
+    df_features.columns = ['TAG_FEAT', 'Meaning']
+    return df, df_features
 
-df = load_data()
+df, df_features = load_data()
 
 st.sidebar.write('# Pret a Depenser')
 st.sidebar.title('Navigation')
@@ -25,7 +28,8 @@ options = st.sidebar.radio('Select a page:',
 if options == 'Home':
     home.home()
 elif options == 'Information Client':
-    client.client(df)
+#    client_dev.client(df, df_features)
+    client.client(df, df_features)
 elif options == 'Analyse Initiale':
     analyse_initiale.run()
 elif options == 'Analyse Exploratoire':

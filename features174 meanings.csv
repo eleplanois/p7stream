@@ -1,0 +1,173 @@
+ACTIVE_AMT_CREDIT_MAX_OVERDUE_MEAN;Mean of : Maximal amount overdue on the Credit Bureau credit so far (at application date of loan in our sample)
+ACTIVE_AMT_CREDIT_SUM_DEBT_MAX;Max of : Current credit limit of credit card reported in Credit Bureau
+ACTIVE_AMT_CREDIT_SUM_MEAN;Mean of : Current credit amount for the Credit Bureau credit
+ACTIVE_DAYS_CREDIT_ENDDATE_MEAN;Mean of : Remaining duration of CB credit (in days) at the time of application in Home Credit
+ACTIVE_DAYS_CREDIT_ENDDATE_MIN;Min of : Remaining duration of CB credit (in days) at the time of application in Home Credit
+ACTIVE_DAYS_CREDIT_UPDATE_MEAN;Mean of : How many days before loan application did last information about the Credit Bureau credit come
+ACTIVE_DAYS_CREDIT_VAR;Variance of : How many days before current application did client apply for Credit Bureau credit
+ACTIVE_MONTHS_BALANCE_MAX_MAX;Max of : Month of balance relative to application date (-1 means the freshest balance date)
+AMT_ANNUITY;Loan annuity
+AMT_CREDIT;Credit amount of the loan
+AMT_GOODS_PRICE;For consumer loans it is the price of the goods for which the loan is given
+AMT_INCOME_TOTAL;Income of the client
+ANNUITY_INCOME_PERC;Loan annuity / Income of the client
+APARTMENTS_AVG;Average of :  Normalized information about building where the client lives:  apartment size
+APARTMENTS_MODE;Modus of :  Normalized information about building where the client lives:  apartment size
+APPROVED_AMT_ANNUITY_MAX;Max of : Annuity of previous approved application
+APPROVED_AMT_GOODS_PRICE_MAX;Max of : Goods price of good that client asked for (if applicable) on the previous approved application
+APPROVED_CNT_PAYMENT_MEAN;Mean of : Term of previous credit at application of the previous approved application
+APPROVED_DAYS_DECISION_MEAN;Mean of : Relative to current application when was the decision about previous approved application made
+BASEMENTAREA_AVG;Average of : Normalized information about building where the client lives : baselent area
+BURO_AMT_CREDIT_MAX_OVERDUE_MEAN;Mean of : Maximal amount overdue on the Credit Bureau credit so far (at application date of loan in our sample)
+BURO_AMT_CREDIT_SUM_DEBT_MEAN;Mean of : Current debt on Credit Bureau credit
+BURO_AMT_CREDIT_SUM_MAX;Max of : Current credit amount for the Credit Bureau credit
+BURO_AMT_CREDIT_SUM_MEAN;Mean of : Current credit amount for the Credit Bureau credit
+BURO_AMT_CREDIT_SUM_OVERDUE_MEAN;Mean of : Current amount overdue on Credit Bureau credit
+BURO_AMT_CREDIT_SUM_SUM;Sum of : Current credit amount for the Credit Bureau credit
+BURO_CREDIT_ACTIVE_Active_MEAN;Mean of : Credit Bureau (CB) reported credits ACTIVE
+BURO_CREDIT_TYPE_Microloan_MEAN;Mean of : Type of Credit Bureau credit (Car, cash,...) == Microloan
+BURO_CREDIT_TYPE_Mortgage_MEAN;Mean of : Type of Credit Bureau credit (Car, cash,...) == Mortgage
+CC_AMT_DRAWINGS_ATM_CURRENT_MIN;Min of : Amount drawing at ATM during the month of the previous credit
+CC_AMT_DRAWINGS_ATM_CURRENT_VAR;Vairance of : Amount drawing at ATM during the month of the previous credit
+CC_AMT_DRAWINGS_OTHER_CURRENT_MEAN;Mean of : Amount of other drawings during the month of the previous credit
+CC_AMT_DRAWINGS_OTHER_CURRENT_MIN;Min of : Amount of other drawings during the month of the previous credit
+CC_AMT_DRAWINGS_OTHER_CURRENT_SUM;Sum of : Amount of other drawings during the month of the previous credit
+CC_AMT_DRAWINGS_POS_CURRENT_MIN;Min of : Amount drawing or buying goods during the month of the previous credit
+CC_AMT_PAYMENT_TOTAL_CURRENT_MIN;min of : How much did the client pay during the month in total on the previous credit
+CC_AMT_PAYMENT_TOTAL_CURRENT_SUM;Sum of : How much did the client pay during the month in total on the previous credit
+CC_CNT_DRAWINGS_ATM_CURRENT_MEAN;Mean of : Number of drawings at ATM during this month on the previous credit
+CC_CNT_DRAWINGS_ATM_CURRENT_MIN;Min of : Number of drawings at ATM during this month on the previous credit
+CC_CNT_DRAWINGS_ATM_CURRENT_SUM;Sum of : Number of drawings at ATM during this month on the previous credit
+CC_CNT_DRAWINGS_CURRENT_MIN;Min of : Number of drawings during this month on the previous credit
+CC_CNT_DRAWINGS_OTHER_CURRENT_MEAN;Mean of : Number of other drawings during this month on the previous credit
+CC_CNT_DRAWINGS_OTHER_CURRENT_SUM;Sum of : Number of other drawings during this month on the previous credit
+CC_CNT_DRAWINGS_POS_CURRENT_MIN;Min of : Number of drawings for goods during this month on the previous credit
+CC_CNT_DRAWINGS_POS_CURRENT_SUM;Sum of : Number of drawings for goods during this month on the previous credit
+CC_CNT_DRAWINGS_POS_CURRENT_VAR;Variance of : Number of drawings for goods during this month on the previous credit
+CC_DRAWING_LIMIT_RATIO_MAX;Max of : Amount drawing at ATM during the month of the previous credit / Credit card limit during the month of the previous credit
+CC_LAST_AMT_BALANCE_MEAN;Mean of : Last month balance of each credit card application
+CC_LATE_PAYMENT_VAR;Variance of : Flag DPD (Days past due) during the month on the previous credit
+CC_NAME_CONTRACT_STATUS_Sent_proposal_MIN;Min of : FLAG 'Contract status (active signed,...) on the previous credit' == 'Sent Proposal'
+CC_PAYMENT_DIV_MIN_MIN;Min of : How much did the client pay during the month on the previous credit / Minimal installment for this month of the previous credit
+CLOSED_AMT_CREDIT_SUM_DEBT_SUM;Sum of : Current debt on Credit Bureau Closed credit 
+CODE_GENDER;Gender of the client
+COMMONAREA_AVG;Agerage of : Normalized information about building where the client lives : common area
+COMMONAREA_MODE;Modus of : Normalized information about building where the client lives : common area
+DAYS_BIRTH;Client's age in days at the time of application
+DAYS_EMPLOYED_PERC;How many days before the application the person started current employment  / Client's age in days at the time of application
+DAYS_ID_PUBLISH;How many days before the application did client change the identity document with which he applied for the loan
+ELEVATORS_AVG;Agerage of : Normalized information about building where the client lives : elevators
+ELEVATORS_MEDI;Median of : Normalized information about building where the client lives : elevators
+EMERGENCYSTATE_MODE_nan;Modus of Normalized information about building where the client lives : emergency state == nana
+EMERGENCYSTATE_MODE_No;Modus of Normalized information about building where the client lives : emergency state == No
+EMERGENCYSTATE_MODE_Yes;Modus of Normalized information about building where the client lives : emergency state == Yes
+ENTRANCES_AVG;Agerage of : Normalized information about building where the client lives : entrances
+EXT_SOURCE_1;Normalized score from external data source 1
+EXT_SOURCE_2;Normalized score from external data source 2
+EXT_SOURCE_3;Normalized score from external data source 3
+FLAG_CONT_MOBILE;Was mobile phone reachable (1=YES, 0=NO)
+FLAG_DOCUMENT_3;Did client provide document 03
+FLAG_DOCUMENT_6;Did client provide document 06
+FLAG_DOCUMENT_7;Did client provide document 07
+FLAG_DOCUMENT_8;Did client provide document 08
+FLAG_DOCUMENT_11;Did client provide document 11
+FLAG_DOCUMENT_13;Did client provide document 13
+FLAG_DOCUMENT_14;Did client provide document 14
+FLAG_DOCUMENT_16;Did client provide document 16
+FLAG_DOCUMENT_17;Did client provide document 17
+FLAG_DOCUMENT_18;Did client provide document 18
+FLAG_DOCUMENT_19;Did client provide document 19
+FLAG_DOCUMENT_20;Did client provide document 20
+FLAG_EMAIL;Did client provide email (1=YES, 0=NO)
+FLAG_OWN_CAR;Flag if the client owns a car
+FLAG_OWN_REALTY;Flag if client owns a house or flat
+FLAG_WORK_PHONE;Did client provide home phone (1=YES, 0=NO)
+FLOORSMAX_AVG;Agerage of : Normalized information about building where the client lives : Max number of  Floor
+FLOORSMAX_MEDI;Median of : Normalized information about building where the client lives : Max number of  Floor
+FLOORSMAX_MODE;Modus of : Normalized information about building where the client lives : Max number of  Floor
+FLOORSMIN_AVG;Agerage of : Normalized information about building where the client lives : Min number of  Floor
+FLOORSMIN_MEDI;Median of : Normalized information about building where the client lives : Min number of  Floor
+FLOORSMIN_MODE;Modus of : Normalized information about building where the client lives : Min number of  Floor
+FONDKAPREMONT_MODE_nan;Modus of : Normalized information about building where the client lives : FondKapremont
+INCOME_CREDIT_PERC;Income of the client / Credit amount of the loan
+INCOME_PER_PERSON;Income of the client / How many family members does client have
+INS_24M_AMT_BALANCE_MAX;Max of : Balance during 24 month of previous credit
+INSTAL_AMT_PAYMENT_MEAN;Mean of : What the client actually paid on previous credit on this installment
+INSTAL_AMT_PAYMENT_MIN;Min of : What the client actually paid on previous credit on this installment
+INSTAL_AMT_PAYMENT_SUM;Max of : What the client actually paid on previous credit on this installment
+INSTAL_COUNT;installments accounts
+INSTAL_DAYS_ENTRY_PAYMENT_MAX;Max of : When was the installments of previous credit paid actually (relative to application date of current loan)
+INSTAL_DBD_MAX;Max of : FLAG When the installment of previous credit was supposed to be paid > When was the installments of previous credit paid actually
+INSTAL_DBD_MEAN;Mean of : FLAG When the installment of previous credit was supposed to be paid > When was the installments of previous credit paid actually
+INSTAL_DBD_SUM;Sum of : FLAG When the installment of previous credit was supposed to be paid > When was the installments of previous credit paid actually
+INSTAL_DPD_MAX;Max of : FLAG When was the installments of previous credit paid actually > When the installment of previous credit was supposed to be paid
+INSTAL_DPD_MEAN;Mean of : FLAG When was the installments of previous credit paid actually > When the installment of previous credit was supposed to be paid
+INSTAL_NUM_INSTALMENT_VERSION_NUNIQUE;Version of installment calendar (0 is for credit card) of previous credit. Change of installment version from month to month signifies that some parameter of payment calendar has changed
+INSTAL_PAYMENT_RATIO_MEAN;Mean of : What was the prescribed installment amount of previous credit on this installment / GROUPED(What the client actually paid on previous credit on this installment)
+LANDAREA_MEDI;Median of : Normalized information about building where the client lives : land area
+LANDAREA_MODE;Modus of : Normalized information about building where the client lives : land area
+LIVINGAPARTMENTS_AVG;Average of : Normalized information about building where the client lives : living apartements
+LIVINGAREA_AVG;Average of : Normalized information about building where the client lives : living area
+LIVINGAREA_MODE;Modus of : Normalized information about building where the client lives : living area
+NAME_EDUCATION_TYPE_Higher_education;Level of highest education the client achieved == 'Higher Education'
+NAME_HOUSING_TYPE_House_apartment;What is the housing situation of the client (renting, living with parents, ...) == 'House_apartment'
+NEW_DOC_KURT;Kurtosis of the distribution 20 Documents
+NONLIVINGAPARTMENTS_AVG;Average of : Normalized information about building where the client lives : Non living apartements
+NONLIVINGAPARTMENTS_MEDI;Median of : Normalized information about building where the client lives : Non living apartements
+NONLIVINGAREA_AVG;Average of : Normalized information about building where the client lives : Non living area
+NONLIVINGAREA_MEDI;Median of : Normalized information about building where the client lives : Non living area
+NONLIVINGAREA_MODE;Modus of : Normalized information about building where the client lives : Non living area
+OCCUPATION_TYPE_Accountants;What kind of occupation does the client have == 'Accountants'
+OCCUPATION_TYPE_High_skill_tech_staff;What kind of occupation does the client have == 'High_skill_tech_staff'
+OCCUPATION_TYPE_HR_staff;What kind of occupation does the client have == 'HR_staff'
+OCCUPATION_TYPE_Laborers;What kind of occupation does the client have == 'Laborers'
+OCCUPATION_TYPE_Managers;What kind of occupation does the client have == 'Managers'
+OCCUPATION_TYPE_Private_service_staff;What kind of occupation does the client have == 'Private_service_staff'
+ORGANIZATION_TYPE_Advertising;Type of organization where client works == 'Advertising'
+ORGANIZATION_TYPE_Agriculture;Type of organization where client works == 'Agriculture'
+ORGANIZATION_TYPE_Cleaning;Type of organization where client works == 'Cleaning'
+ORGANIZATION_TYPE_Construction;Type of organization where client works == 'Construction'
+ORGANIZATION_TYPE_Electricity;Type of organization where client works == 'Electricity'
+ORGANIZATION_TYPE_Housing;Type of organization where client works == 'Housing'
+ORGANIZATION_TYPE_Industry_type_5;Type of organization where client works == 'Industry_type_5'
+ORGANIZATION_TYPE_Insurance;Type of organization where client works == 'Insurance'
+ORGANIZATION_TYPE_Medicine;Type of organization where client works == 'Medicine'
+ORGANIZATION_TYPE_Military;Type of organization where client works == 'Military'
+ORGANIZATION_TYPE_Mobile;Type of organization where client works == 'Mobile'
+ORGANIZATION_TYPE_Police;Type of organization where client works == 'Police'
+ORGANIZATION_TYPE_Postal;Type of organization where client works == 'Postal'
+ORGANIZATION_TYPE_Realtor;Type of organization where client works == 'Realtor'
+ORGANIZATION_TYPE_School;Type of organization where client works == 'School'
+ORGANIZATION_TYPE_Security;Type of organization where client works == 'Security'
+ORGANIZATION_TYPE_Services;Type of organization where client works == 'Services'
+ORGANIZATION_TYPE_Telecom;Type of organization where client works == 'Telecom'
+ORGANIZATION_TYPE_University;Type of organization where client works == 'University'
+PAYMENT_RATE;Loan annuity / Credit amount of the loan
+POS_COUNT;Count posterior cash accounts
+POS_REMAINING_INSTALMENTS;Number of remaining installments (future installments) 
+POS_SK_DPD_DEF_MEAN;Mean of : DPD (Days past due) during the month with tolerance (debts with low loan amounts are ignored) of the previous credit
+POS_SK_DPD_DEF_SUM;Sum of : DPD (Days past due) during the month with tolerance (debts with low loan amounts are ignored) of the previous credit
+PREV_AMT_DOWN_PAYMENT_MAX;Max of : Down payment on the previous application
+PREV_APP_CREDIT_PERC_MEAN;Mean of : For how much credit did client ask on the previous application /Final credit amount on the previous application. This differs from AMT_APPLICATION in a way that the AMT_APPLICATION is the amount for which the client initially applied for, but during our approval process he could have received different amount - AMT_CREDIT
+PREV_APP_CREDIT_PERC_MIN;Min of : For how much credit did client ask on the previous application /Final credit amount on the previous application. This differs from AMT_APPLICATION in a way that the AMT_APPLICATION is the amount for which the client initially applied for, but during our approval process he could have received different amount - AMT_CREDIT
+PREV_CODE_REJECT_REASON_LIMIT_MEAN;Mean of : Why was the previous application rejected == LIMIT
+PREV_NAME_PRODUCT_TYPE_nan_MEAN;Mean of : Was the previous application x-sell o walk-in == nan
+PREV_NAME_PRODUCT_TYPE_walk_in_MEAN;Mean of : Was the previous application x-sell o walk-in == walk_in
+PREV_NAME_SELLER_INDUSTRY_Connectivity_MEAN;Mean of : The industry of the seller == Connectivity
+PREV_NAME_TYPE_SUITE_Group_of_people_MEAN;Mean of : Who was accompanying client when he was applying for the loan == Group_of_people
+PREV_NAME_TYPE_SUITE_Other_B_MEAN;Mean of : Who was accompanying client when he was applying for the loan == Other_B
+PREV_NAME_TYPE_SUITE_Spouse_partner_MEAN;Mean of : Who was accompanying client when he was applying for the loan == Spouse_partner
+PREV_NAME_TYPE_SUITE_Unaccompanied_MEAN;Mean of : Who was accompanying client when he was applying for the loan == Unaccompanied
+PREV_SK_ID_PREV_NUNIQUE;Count of : ID of previous credit in Home credit related to loan in our sample. (One loan in our sample can have 0,1,2 or more previous loan applications in Home Credit, previous application could, but not necessarily have to lead to credit) 
+REFUSED_AMT_GOODS_PRICE_MAX;Max of : Goods price of good that client asked for (if applicable) on the previous REFUSED application
+REGION_POPULATION_RELATIVE;Normalized population of region where client lives (higher number means the client lives in more populated region)
+REGION_RATING_CLIENT;Our rating of the region where client lives (1,2,3)
+REGION_RATING_CLIENT_W_CITY;Our rating of the region where client lives with taking city into account (1,2,3)
+TOTALAREA_MODE;Modus of : Normalized information about building where the client lives : Total area
+WALLSMATERIAL_MODE_Block;Modus of : Normalized information about building where the client lives : WALLSMATERIAL == Block
+WALLSMATERIAL_MODE_Mixed;Modus of : Normalized information about building where the client lives : WALLSMATERIAL == Mixed
+WALLSMATERIAL_MODE_Monolithic;Modus of : Normalized information about building where the client lives : WALLSMATERIAL == Monolithic
+WALLSMATERIAL_MODE_Panel;Modus of : Normalized information about building where the client lives : WALLSMATERIAL == PAnel
+YEARS_BEGINEXPLUATATION_MODE;Modus of : Normalized information about building where the client lives : Years begin Expluatation
+YEARS_BUILD_MEDI;Median of : Normalized information about building where the client lives : Years Build
+YEARS_BUILD_MODE;Modus of : Normalized information about building where the client lives : Years Build
