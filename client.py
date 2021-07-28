@@ -10,6 +10,7 @@ def client(df, df_features):
     st.set_option('deprecation.showPyplotGlobalUse', False)
 # dev
 #    url = "http://127.0.0.1:5000/"
+# prod
     url = "https://p7api.herokuapp.com/"
 
     explainer_shap = -0.5813475526725127
@@ -17,7 +18,6 @@ def client(df, df_features):
     df_feats = pd.read_csv('feats_sample_shap_values_lgb.csv', index_col=0)
 
     url_requests = url+"predict/"
-    print(url_requests)
     response = requests.get(url_requests)
     if response:
         list_client_id = response.json()['list_client_id']
@@ -38,10 +38,7 @@ def client(df, df_features):
             url_pred = url + "predict/" + sk_id
             response = requests.get(url_pred)
             if response:
-                print(sk_id,response.json())
-                predict_proba_0 = float(response.json()['predict_proba_0'])
                 predict_proba_1 = float(response.json()['predict_proba_1'])
-                retour_prediction = response.json()['retour_prediction']
             else:
                 print("erreur web : ", response)
 

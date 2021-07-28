@@ -1,8 +1,6 @@
 import streamlit as st
 import client
-import client_dev
 import home
-import analyse_initiale
 import analyse_exploratoire
 import pandas as pd
 
@@ -20,17 +18,47 @@ def load_data():
 
 df, df_features = load_data()
 
-st.sidebar.write('# Pret a Depenser')
-st.sidebar.title('Navigation')
-options = st.sidebar.radio('Select a page:',
-                           ['Home', 'Information Client', 'Analyse Initiale', 'Analyse Exploratoire'])
 
-if options == 'Home':
-    home.home()
-elif options == 'Information Client':
-#    client_dev.client(df, df_features)
-    client.client(df, df_features)
-elif options == 'Analyse Initiale':
-    analyse_initiale.run()
-elif options == 'Analyse Exploratoire':
-    analyse_exploratoire.run(df)
+
+st.title("Pret a DEPENSER")
+
+
+def main():
+    st.sidebar.write('# Pret a Depenser')
+    st.sidebar.write('## utilisateur :', st.session_state.user)
+    st.sidebar.title('Navigation')
+    options = st.sidebar.radio('Select a page:',
+                               ['Home', 'Information Client', 'Analyse Initiale', 'Analyse Exploratoire'])
+
+    if options == 'Home':
+        home.home()
+    elif options == 'Information Client':
+        client.client(df, df_features)
+    elif options == 'Analyse Exploratoire':
+        analyse_exploratoire.run(df)
+
+# Initialization
+if 'user' not in st.session_state:
+    st.session_state.user = ''
+if 'password' not in st.session_state:
+    st.session_state.password = ''
+if 'loginOK' not in st.session_state:
+    st.session_state.loginOK = False
+
+if ~st.session_state.loginOK:
+#if st.session_state.password != 'pwd123':
+    user_placeholder = st.empty()
+    pwd_placeholder = st.empty()
+    user = user_placeholder.text_input("User:", value="")
+    st.session_state.user = user
+    pwd = pwd_placeholder.text_input("Password:", value="", type="password")
+    st.session_state.password = pwd
+    if st.session_state.password == 'pwd123':
+        st.session_state.loginOK = True
+        user_placeholder.empty()
+        pwd_placeholder.empty()
+        main()
+    else:
+        st.error("the password you entered is incorrect")
+else:
+    main()
