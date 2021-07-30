@@ -6,21 +6,34 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 
-def general(df, df_appli):
+def general(df_analyse):
     st.set_option('deprecation.showPyplotGlobalUse', False)
     st.subheader("General Information")
-    note_pie = df_appli['TARGET'].value_counts()
+    note_pie = df_analyse['TARGET'].value_counts()
     st.text("payment Default")
     fig = go.Figure(data=[go.Pie(labels=['payment OK', 'payment default'],
                                  values=note_pie,
                                  pull=[0, 0.3])])
     st.plotly_chart(fig)
 
-    age_data = df_appli[['TARGET', 'DAYS_BIRTH']]
-    age_data['YEARS_BIRTH'] = age_data['DAYS_BIRTH'] / 365
-    age_data['YEARS_BINNED'] = pd.cut(age_data['YEARS_BIRTH'], bins = np.linspace(20, 70, num = 11))
-#    age_groups  = age_data.groupby('YEARS_BINNED').mean()
-    st.write(age_data)
+    colonne = df_analyse.columns
+    colonne_num = df_analyse.select_dtypes(['float64','int64']).columns
+
+
+    graph_colonne = st.selectbox(label='affichage : ', options=colonne_num, index=3)
+    graph_groupby = st.selectbox(label='regroupement par : ', options=colonne, index=0)
+
+    options_agg = st.radio('valeur affiche:', ['Max', 'Mean', 'Count'], index=1)
+
+    df_agg = df_analyse.groupby(graph_groupby)
+    if options_agg=='Max':
+        aggr = df_agg[graph_colonne].max()
+    elif options_agg=='Mean':
+        aggr = df_agg[graph_colonne].mean()
+    elif options_agg=='Count':
+        aggr = df_agg[graph_colonne].count()
+    fig = go.Figure(go.Bar(x=aggr.index.values, y=aggr.values))
+    st.plotly_chart(fig)
 
     st.subheader("SHAPLEY values interpretation")
     st.text("""
