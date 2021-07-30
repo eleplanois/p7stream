@@ -1,6 +1,5 @@
 import streamlit as st
-import client
-import home
+import client, home, general
 import analyse_exploratoire
 import pandas as pd
 
@@ -12,11 +11,12 @@ def load_data():
     df.drop(columns='TARGET', inplace=True)
     index1500 = [i for i in range(0,1500)]
     df.index = index1500
+    df_appli = pd.read_csv('df_application_sample.csv')
     df_features = pd.read_csv('features174 meanings.csv', sep=';', header=None)
     df_features.columns = ['TAG_FEAT', 'Meaning']
-    return df, df_features
+    return df, df_appli, df_features
 
-df, df_features = load_data()
+df, df_appli, df_features = load_data()
 
 
 
@@ -28,14 +28,16 @@ def main():
     st.sidebar.write('## utilisateur :', st.session_state.user)
     st.sidebar.title('Navigation')
     options = st.sidebar.radio('Select a page:',
-                               ['Home', 'Information Client', 'Analyse Initiale', 'Analyse Exploratoire'])
+                               ['Home', 'General Information', 'Client Information', 'Clients Analysis'])
 
     if options == 'Home':
         home.home()
-    elif options == 'Information Client':
-        client.client(df, df_features)
-    elif options == 'Analyse Exploratoire':
-        analyse_exploratoire.run(df)
+    elif options == 'General Information':
+        general.general(df, df_appli)
+    elif options == 'Client Information':
+        client.client(df, df_appli, df_features)
+    elif options == 'Clients Analysis':
+        analyse_exploratoire.run(df, df_appli)
 
 # Initialization
 if 'user' not in st.session_state:

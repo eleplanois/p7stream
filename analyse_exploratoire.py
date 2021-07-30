@@ -1,7 +1,7 @@
 import streamlit as st
 import plotly.graph_objs as go
 
-def run(df):
+def run(df, df_appli):
     st.write("""
     # Pret a depenser
     
@@ -29,17 +29,25 @@ def run(df):
         x=df_isin[graph_colonne_X],
         y=df_isin[graph_colonne_Y],
         mode='markers',
+        marker=dict(
+            size=6,
+            color='rgb(255,87,51)',
+            symbol='square'),
         text=df_isin['SK_ID_CURR'])
 
     data2 = go.Scatter(
         x=df_notin[graph_colonne_X],
         y=df_notin[graph_colonne_Y],
         mode='markers',
+        marker=dict(
+            size=4,
+            color='rgb(45,180,250)',
+            symbol='circle'),
         text=df_notin['SK_ID_CURR'])
     data = [data1, data2]
 
     layout = go.Layout(
-        title=graph_colonne_Y + "suivant" + graph_colonne_X,
+        title=graph_colonne_Y + " en fonction de " + graph_colonne_X,
         xaxis=dict(title=graph_colonne_X),
         yaxis=dict(title=graph_colonne_Y),
         hovermode='closest'
