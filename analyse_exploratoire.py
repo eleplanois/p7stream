@@ -1,7 +1,7 @@
 import streamlit as st
 import plotly.graph_objs as go
 
-def run(df, df_appli):
+def run(df, df_features):
     st.write("""
     # Pret a depenser
     
@@ -23,7 +23,11 @@ def run(df, df_appli):
     st.dataframe(df_isin[list_colonne])
 
     graph_colonne_X = st.selectbox(label='abscisse X : ', options=colonne, index=66)
+    text_X = df_features[df_features.TAG_FEAT==graph_colonne_X]['Meaning'].values[0]
+    st.text(text_X)
     graph_colonne_Y = st.selectbox(label='ordonne Y : ', options=colonne, index=65)
+    text_Y = df_features[df_features.TAG_FEAT==graph_colonne_Y]['Meaning'].values[0]
+    st.text(text_Y)
 
     data1 = go.Scatter(
         x=df_isin[graph_colonne_X],
@@ -33,7 +37,7 @@ def run(df, df_appli):
             size=6,
             color='rgb(255,87,51)',
             symbol='square'),
-        text=df_isin['SK_ID_CURR'])
+            text=df_isin['SK_ID_CURR'])
 
     data2 = go.Scatter(
         x=df_notin[graph_colonne_X],
@@ -43,13 +47,13 @@ def run(df, df_appli):
             size=4,
             color='rgb(45,180,250)',
             symbol='circle'),
-        text=df_notin['SK_ID_CURR'])
+    text=df_isin['SK_ID_CURR'])
     data = [data1, data2]
 
     layout = go.Layout(
         title=graph_colonne_Y + " en fonction de " + graph_colonne_X,
-        xaxis=dict(title=graph_colonne_X),
-        yaxis=dict(title=graph_colonne_Y),
+        xaxis=dict(title=text_X),
+        yaxis=dict(title=text_Y),
         hovermode='closest'
     )
     plotly_fig = go.Figure(data=data, layout=layout)

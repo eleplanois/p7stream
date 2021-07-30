@@ -38,7 +38,7 @@ def main():
     elif options == 'Client Information':
         client.client(df, df_appli, df_features)
     elif options == 'Clients Analysis':
-        analyse_exploratoire.run(df, df_appli)
+        analyse_exploratoire.run(df, df_features)
 
 # Initialization
 if 'user' not in st.session_state:

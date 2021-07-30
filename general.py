@@ -32,7 +32,15 @@ def general(df_analyse):
         aggr = df_agg[graph_colonne].mean()
     elif options_agg=='Count':
         aggr = df_agg[graph_colonne].count()
-    fig = go.Figure(go.Bar(x=aggr.index.values, y=aggr.values))
+
+    layout = go.Layout(
+        title=graph_colonne + " regroupe par  " + graph_groupby,
+        xaxis=dict(title=graph_groupby),
+        yaxis=dict(title=graph_colonne),
+        hovermode='closest'
+    )
+
+    fig = go.Figure(go.Bar(x=aggr.index.values, y=aggr.values), layout=layout)
     st.plotly_chart(fig)
 
     st.subheader("SHAPLEY values interpretation")
