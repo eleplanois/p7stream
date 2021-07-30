@@ -9,9 +9,9 @@ import numpy as np
 def client(df, df_appli, df_features):
     st.set_option('deprecation.showPyplotGlobalUse', False)
 # dev
-    url = "http://127.0.0.1:5000/"
+#    url = "http://127.0.0.1:5000/"
 # prod
-#    url = "https://p7api.herokuapp.com/"
+    url = "https://p7api.herokuapp.com/"
 
     explainer_shap = -0.5813475526725127
 
