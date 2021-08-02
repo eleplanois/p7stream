@@ -37,7 +37,9 @@ def run(df, df_features):
             size=6,
             color='rgb(255,87,51)',
             symbol='square'),
-            text=df_isin['SK_ID_CURR'])
+        text=df_isin['SK_ID_CURR'],
+        name='Selection'
+    )
 
     data2 = go.Scatter(
         x=df_notin[graph_colonne_X],
@@ -47,7 +49,10 @@ def run(df, df_features):
             size=4,
             color='rgb(45,180,250)',
             symbol='circle'),
-    text=df_isin['SK_ID_CURR'])
+        text=df_notin['SK_ID_CURR'],
+        name='Hors selection'
+    )
+
     data = [data1, data2]
 
     layout = go.Layout(
