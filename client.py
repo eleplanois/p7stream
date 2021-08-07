@@ -13,7 +13,7 @@ def client(df, df_appli, df_features):
 # prod
     url = "https://p7api.herokuapp.com/"
 
-    explainer_shap = -0.5813475526725127
+    explainer_shap = -0.0004974982472664461
 
     df_feats = pd.read_csv('feats_sample_shap_values_lgb.csv', index_col=0)
 

@@ -47,4 +47,4 @@ def general(df_analyse):
     st.text("""
     - Red value means high value for features
     - High value for SHAP means more payment default risk""")
-    st.image('summary_plot_lgbm_feats.png', width=600)
+    st.image('summary_plot_lgbm.png', width=600)
