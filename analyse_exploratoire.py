@@ -3,16 +3,20 @@ import plotly.graph_objs as go
 
 def run(df, df_features):
     st.write("""
-    # Pret a depenser
-    
     ## ANALYSE EXPLORATOIRE
     """)
+    st.write("""
+    ### CLIENTS
+    """)
     list_client_id = sorted(list(df.SK_ID_CURR))
-    list_client_selec = st.multiselect("selection clients", list_client_id)
+    list_client_selec = st.multiselect("selection Multiple clients", list_client_id)
 
+    st.write("""
+    ### VARIABLES A AFFICHER DANS LE TABLEAU
+    """)
     colonne = list(df.columns)
     colonne = sorted(colonne)
-    list_colonne =  st.multiselect("selection variables", colonne,
+    list_colonne =  st.multiselect("selection Multiple variables", colonne,
                                    default=['SK_ID_CURR','EXT_SOURCE_1','EXT_SOURCE_2','EXT_SOURCE_3','INSTAL_DPD_MEAN',
                                             'AMT_CREDIT', 'PAYMENT_RATE','CODE_GENDER','DAYS_BIRTH',
                                             'AMT_ANNUITY'])
@@ -22,10 +26,19 @@ def run(df, df_features):
 
     st.dataframe(df_isin[list_colonne])
 
+    st.write("""
+    ## GRAPHIQUE INTERACTIF POUR RECHERCHE CLIENTS VOISINS
+    """)
+    st.write("""
+    ### ABSCISSE GRAPH
+    """)
     graph_colonne_X = st.selectbox(label='abscisse X : ', options=colonne, index=66)
     text_X = df_features[df_features.TAG_FEAT==graph_colonne_X]['Meaning'].values[0]
     st.text(text_X)
-    graph_colonne_Y = st.selectbox(label='ordonne Y : ', options=colonne, index=65)
+    st.write("""
+    ### ORDONNEE GRAPH
+    """)
+    graph_colonne_Y = st.selectbox(label='ordonnee Y : ', options=colonne, index=65)
     text_Y = df_features[df_features.TAG_FEAT==graph_colonne_Y]['Meaning'].values[0]
     st.text(text_Y)
 

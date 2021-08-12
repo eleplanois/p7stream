@@ -15,9 +15,10 @@ def load_data():
     df_features = pd.read_csv('features174 meanings.csv', sep=';', header=None)
     df_features.columns = ['TAG_FEAT', 'Meaning']
     df_analyse = pd.read_csv('df_analyse.csv', index_col=0)
-    return df, df_appli, df_features, df_analyse
+    df_feats = pd.read_csv('feats_sample_shap_values_lgb.csv', index_col=0)
+    return df, df_appli, df_features, df_analyse, df_feats
 
-df, df_appli, df_features, df_analyse = load_data()
+df, df_appli, df_features, df_analyse, df_feats = load_data()
 
 
 
@@ -36,7 +37,7 @@ def main():
     elif options == 'General Information':
         general.general(df_analyse)
     elif options == 'Client Information':
-        client.client(df, df_appli, df_features)
+        client.client(df, df_appli, df_features, df_feats)
     elif options == 'Clients Analysis':
         analyse_exploratoire.run(df, df_features)
 

@@ -43,8 +43,19 @@ def general(df_analyse):
     fig = go.Figure(go.Bar(x=aggr.index.values, y=aggr.values), layout=layout)
     st.plotly_chart(fig)
 
-    st.subheader("SHAPLEY values interpretation")
-    st.text("""
-    - Red value means high value for features
-    - High value for SHAP means more payment default risk""")
+    st.subheader("INTERPRETATION VALEURS SHAPLEY")
+    st.write("""
+    ** Les variables sont classes de haut en bas par ordre d'importance dans l'interpretation.** 
+    Ici la variable EXT_SOURCE_1 est donc celle qui a le plus d'importance
+    
+    **La  couleur pour chaque variable est un indicateur de la valeur, rouge valeur importante, bleu petite valeur** 
+    
+    **Enfin, l'impact sur la prediction est representé par le côté gauche ou droit.
+     A gauche on fait baisser la prédiction donc plus de chance d'accepter le crédit.**
+     
+     Ainsi pour la Variable EXT_SOURCE_1, des grandes valeurs de celle-ci vont faire baisser le score de prediction, 
+     on aura plus de chances d'accepter le crédit 
+    
+    
+    """)
     st.image('summary_plot_lgbm.png', width=600)

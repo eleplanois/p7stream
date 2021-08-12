@@ -6,7 +6,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 
-def client(df, df_appli, df_features):
+def client(df, df_appli, df_features, df_feats):
     st.set_option('deprecation.showPyplotGlobalUse', False)
 # dev
 #    url = "http://127.0.0.1:5000/"
@@ -14,8 +14,6 @@ def client(df, df_appli, df_features):
     url = "https://p7api.herokuapp.com/"
 
     explainer_shap = -0.0004974982472664461
-
-    df_feats = pd.read_csv('feats_sample_shap_values_lgb.csv', index_col=0)
 
     url_requests = url+"predict/"
     response = requests.get(url_requests)
@@ -25,12 +23,6 @@ def client(df, df_appli, df_features):
     else:
         list_client_id = ['000000']
         print("erreur web : ", response)
-
-    st.write("""
-    # STREMLIT
-    ## premier essai stream
-    alors ok
-    """)
 
     def update_sk(sk_id):
         predict_proba_1=0.5
@@ -43,17 +35,19 @@ def client(df, df_appli, df_features):
                 print("erreur web : ", response)
 
         gauge_predict = go.Figure(go.Indicator( mode = "gauge+number",
-                                                value = predict_proba_1,
+                                                value = predict_proba_1*100,
                                                 domain = {'x': [0, 1], 'y': [0, 1]},
                                                 gauge = {
-                                                    'axis': {'range': [0, 1], 'tickwidth': 0.2, 'tickcolor': "darkblue"},
+                                                    'axis': {'range': [0, 100], 'tickwidth': 0.2, 'tickcolor': "darkblue"},
+                                                    'bgcolor': "lightcoral",
                                                     'steps': [
-                                                        {'range': [0, 0.5], 'color': 'lightgreen'},
-                                                        {'range': [0.5, 1], 'color': 'lightcoral'}],
+                                                        {'range': [0, 40], 'color': 'lightgreen'},
+                                                        {'range': [40, 60], 'color': 'palegoldenrod'}
+                                                    ],
                                                     'threshold': {
                                                         'line': {'color': "red", 'width': 4},
                                                         'thickness': 0.75,
-                                                        'value': 1}},
+                                                        'value': 100}},
                                                 title = {'text': f"client {sk_id}"}))
 
         return gauge_predict
@@ -93,9 +87,32 @@ def client(df, df_appli, df_features):
     st.write(f"Income of the client / Credit amount of the loan : {income_credit_perc*100:.2f} %")
 
 
+    st.subheader("Retour Prediction")
+    st.write("""
+    **le retour est un score de 0 à 100. Le seuil de refus est à 50.**
+    
+    1. Un retour en dessous de 40 est une acceptation du crédit.
+    
+    2. Un retour au dessus de 60 est un refus du crédit.
+    
+    3. Pour un score entre 40 et 60, on va regarder l'interpretabilité de la prediction pour aider au choix. 
+    
+    On pourra s'aider aussi de la page "Client Analysis pour étudier le client et les clients lui ressemblant.
+    """)
+
 
     fig = update_sk(option_sk)
     st.plotly_chart(fig)
+
+    st.subheader("INTERPRETATION VALEURS SHAPLEY")
+    st.write("""
+        ** Les variables sont classes de haut en bas par ordre d'importance dans l'interpretation.** 
+        
+        **La  couleur pour chaque variable est un indicateur de l'influence sur la prediction.** 
+        
+        **Les variables en rouge font augmenter le score et donc le risque de defaut de paiement.**
+         
+        """)
 
     class ShapObject:
 
@@ -120,5 +137,8 @@ def client(df, df_appli, df_features):
     fig, ax = plt.subplots(nrows=1, ncols=1)
     fig, df_top_feats = update_shap(option_sk, fig)
     st.pyplot(fig)
+    st.write("""
+    **RAPPEL DE LA SIGNIFICATION DES VARIABLES
+    """)
 
     st.table(df_top_feats)
